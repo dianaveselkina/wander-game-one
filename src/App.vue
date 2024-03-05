@@ -3,13 +3,16 @@
     <h1>Игра бродилка</h1>
     <StartDiv></StartDiv>
     <FinishDiv></FinishDiv>
+    <BoardDiv></BoardDiv>
   </div>
 </template>
 <script>
+import BoardDiv from './components/BoardDiv.vue';
 import StartDiv from './components/StartDiv.vue';
 import FinishDiv from './components/FinishDiv.vue';
 export default {
   components: {
+    BoardDiv,
     StartDiv,
     FinishDiv,
   },

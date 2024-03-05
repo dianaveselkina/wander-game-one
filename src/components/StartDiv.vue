@@ -19,13 +19,14 @@ p {
   color: #5c564f;
 }
 .start {
-  min-width: 180px;
-  height: 120px;
+  z-index: 4;
+  width: 240px;
+  height: 182px;
   position: absolute;
-  bottom: 50px;
+  top: 160px;
   left: 50px;
   background-color: #e2a66a;
-  border-radius: 1rem;
+  border-radius: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
