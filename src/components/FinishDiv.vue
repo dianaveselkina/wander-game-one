@@ -13,10 +13,9 @@ export default {
 </script>
 <style scoped>
 p {
-  font-size: 3rem;
-  font-weight: bold;
   font-style: italic;
-  color: #5c564f;
+  color: #fffefd;
+  font-size: 3rem;
 }
 .start {
   z-index: 4;
@@ -25,7 +24,7 @@ p {
   position: absolute;
   bottom: 50px;
   left: 50px;
-  background-color: #e2a66a;
+  background-color: rgb(148, 148, 202);
   border-radius: 3rem;
   display: flex;
   flex-direction: column;

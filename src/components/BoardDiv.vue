@@ -5,9 +5,9 @@
     <div class="circle">2</div>
     <div class="circle">3</div>
     <div class="circle">4</div>
-    <div class="circle">5</div>
+    <div class="circle5">5</div>
     <div class="circle">6</div>
-    <div class="circle">7</div>
+    <div class="circle7">7</div>
     <div class="background"></div>
     <div class="background"></div>
     <div class="background"></div>
@@ -19,7 +19,7 @@
     <div class="circle">16</div>
     <div class="circle">15</div>
     <div class="circle">14</div>
-    <div class="circle">13</div>
+    <div class="circle13">13</div>
     <div class="circle">12</div>
     <div class="circle">11</div>
     <div class="circle">10</div>
@@ -34,8 +34,8 @@
     <div class="background"></div>
     <div class="circle">18</div>
     <div class="circle">19</div>
-    <div class="circle">20</div>
-    <div class="circle">21</div>
+    <div class="circle20">20</div>
+    <div class="circle21">21</div>
     <div class="circle">22</div>
     <div class="circle">23</div>
     <div class="circle">24</div>
@@ -47,12 +47,12 @@
     <div class="background"></div>
     <div class="background"></div>
     <div class="background"></div>
-    <div class="circle">26</div>
-    <div class="background">33</div>
+    <div class="circle26">26</div>
+    <div class="background"></div>
+    <div class="circle">33</div>
     <div class="circle">32</div>
     <div class="circle">31</div>
-    <div class="circle">A</div>
-    <div class="circle">30</div>
+    <div class="circle30">30</div>
     <div class="circle">29</div>
     <div class="circle">28</div>
     <div class="circle">27</div>
@@ -77,7 +77,13 @@ h1 {
   opacity: 0.5;
   width: 2300px;
   height: 1590px;
-  background-color: #d1c6bb;
+  background: radial-gradient(
+    circle,
+    rgba(66, 66, 199, 0.7987570028011204) 9%,
+    rgba(4, 113, 189, 1) 31%,
+    rgba(0, 212, 255, 1) 60%,
+    rgba(226, 244, 247, 1) 89%
+  );
   top: 128px;
   left: 17px;
   position: absolute;
@@ -87,7 +93,9 @@ h1 {
   gap: 50px 50px;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: (1fr, 2fr, 1fr, 2fr, 1fr, 2fr);
-  color: black;
+  font-style: italic;
+  font-weight: bold;
+  color: #020202;
   font-size: 3rem;
 }
 .container * {
@@ -100,7 +108,22 @@ h1 {
   padding: 10px;
 }
 .background {
-  background-color: #d1c6bb;
+  opacity: 0;
   border: none;
+}
+.circle5,
+.circle20,
+.circle30 {
+  background-color: green;
+}
+.circle21 {
+  background-color: blue;
+}
+.circle7 {
+  background-color: yellow;
+}
+.circle13,
+.circle26 {
+  background-color: red;
 }
 </style>

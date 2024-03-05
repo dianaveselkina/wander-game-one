@@ -31,9 +31,15 @@ h1 {
 .board {
   max-width: 2400px;
   height: 1800px;
-  background-color: #d1c6bb;
+  background: radial-gradient(
+    circle,
+    rgba(66, 66, 199, 0.7987570028011204) 9%,
+    rgba(4, 113, 189, 1) 31%,
+    rgba(0, 212, 255, 1) 60%,
+    rgba(226, 244, 247, 1) 89%
+  );
   position: relative;
-  margin: 2rem auto;
+  margin: 4rem auto;
   border-radius: 3rem;
   display: flex;
   flex-direction: column;
