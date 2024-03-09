@@ -2,11 +2,14 @@
   <div class="board">
     <h1>Игра бродилка</h1>
     <StartDiv></StartDiv>
+    <PlayerDiv>1</PlayerDiv>
+    <PlayerDiv class="player2">2</PlayerDiv>
     <FinishDiv></FinishDiv>
     <BoardDiv></BoardDiv>
   </div>
 </template>
 <script>
+import PlayerDiv from './components/PlayerDiv.vue';
 import BoardDiv from './components/BoardDiv.vue';
 import StartDiv from './components/StartDiv.vue';
 import FinishDiv from './components/FinishDiv.vue';
@@ -15,6 +18,7 @@ export default {
     BoardDiv,
     StartDiv,
     FinishDiv,
+    PlayerDiv,
   },
   data() {
     return {};
@@ -22,7 +26,7 @@ export default {
   methods: {},
 };
 </script>
-<style>
+<style scoped>
 h1 {
   font-size: 4rem;
   font-style: italic;
@@ -45,5 +49,10 @@ h1 {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+.player2 {
+  background-color: rgba(236, 71, 42, 0.5);
+  top: 268px;
+  left: 130px;
 }
 </style>
