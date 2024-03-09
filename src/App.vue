@@ -1,7 +1,14 @@
 <template>
   <div class="board">
-    <MyButton v-if="spinVisibility" class="button">Крутить барабан</MyButton>
-    <MyButton v-if="startVisibility" class="button">Начать игру</MyButton>
+    <MyButton v-if="spinVisibility" class="button" @click="removeWhee()"
+      >Крутить барабан</MyButton
+    >
+    <MyButton
+      v-if="startVisibility"
+      class="button"
+      @click="deleteStartBtn(), addSpin(), addWhee()"
+      >Начать игру</MyButton
+    >
     <StartDiv></StartDiv>
     <PlayerDiv>1</PlayerDiv>
     <PlayerDiv class="player2">2</PlayerDiv>
@@ -31,14 +38,29 @@ export default {
       startVisibility: true,
       wheelVisibility: false,
       spinVisibility: false,
+      isRotate: false,
     };
   },
-  methods: {},
+  methods: {
+    deleteStartBtn() {
+      this.startVisibility = false;
+    },
+    addSpin() {
+      this.spinVisibility = true;
+    },
+    addWhee() {
+      this.wheelVisibility = true;
+    },
+    removeWhee() {
+      this.wheelVisibility = false;
+    },
+    wheelSpin() {},
+  },
 };
 </script>
 <style scoped>
 .button {
-  margin: 10px auto;
+  margin: 20px auto;
 }
 .board {
   max-width: 2400px;
@@ -66,5 +88,12 @@ export default {
 .wheel {
   margin: 550px 850px;
   text-align: center;
+}
+.rotate-enter-active,
+.rotate-leave-active {
+  transition: all 2s ease-in-out;
+}
+.rotate-enter, .rotate-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform: scale(200%);
 }
 </style>

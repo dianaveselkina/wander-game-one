@@ -23,4 +23,7 @@ export default {
   align-items: center;
   font-size: 50px;
 }
+.button:hover {
+  box-shadow: 0 0 14px 14px rgba(57, 49, 133, 1.6);
+}
 </style>
