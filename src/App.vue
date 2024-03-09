@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-    <h1>Игра бродилка</h1>
+    <MyButton class="wheel__spin">Крутить барабан</MyButton>
     <StartDiv></StartDiv>
     <PlayerDiv>1</PlayerDiv>
     <PlayerDiv class="player2">2</PlayerDiv>
@@ -10,6 +10,7 @@
   </div>
 </template>
 <script>
+import MyButton from './components/MyButton.vue';
 import PlayerDiv from './components/PlayerDiv.vue';
 import BoardDiv from './components/BoardDiv.vue';
 import StartDiv from './components/StartDiv.vue';
@@ -17,6 +18,7 @@ import FinishDiv from './components/FinishDiv.vue';
 import WheelDiv from './components/WheelDiv.vue';
 export default {
   components: {
+    MyButton,
     BoardDiv,
     StartDiv,
     FinishDiv,
@@ -30,10 +32,8 @@ export default {
 };
 </script>
 <style scoped>
-h1 {
-  font-size: 4rem;
-  font-style: italic;
-  color: #5c564f;
+.wheel__spin {
+  margin: 0 auto;
 }
 .board {
   max-width: 2400px;
