@@ -1,10 +1,11 @@
 <template>
   <div class="board">
-    <MyButton class="wheel__spin">Крутить барабан</MyButton>
+    <MyButton v-if="spinVisibility" class="button">Крутить барабан</MyButton>
+    <MyButton v-if="startVisibility" class="button">Начать игру</MyButton>
     <StartDiv></StartDiv>
     <PlayerDiv>1</PlayerDiv>
     <PlayerDiv class="player2">2</PlayerDiv>
-    <WheelDiv class="wheel"></WheelDiv>
+    <WheelDiv v-if="wheelVisibility" class="wheel"></WheelDiv>
     <FinishDiv></FinishDiv>
     <BoardDiv></BoardDiv>
   </div>
@@ -26,14 +27,18 @@ export default {
     WheelDiv,
   },
   data() {
-    return {};
+    return {
+      startVisibility: true,
+      wheelVisibility: false,
+      spinVisibility: false,
+    };
   },
   methods: {},
 };
 </script>
 <style scoped>
-.wheel__spin {
-  margin: 0 auto;
+.button {
+  margin: 10px auto;
 }
 .board {
   max-width: 2400px;

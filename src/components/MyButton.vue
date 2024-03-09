@@ -1,5 +1,5 @@
 <template>
-  <button class="wheel__spin"><slot></slot></button>
+  <button class="button"><slot></slot></button>
 </template>
 <script>
 export default {
@@ -10,7 +10,7 @@ export default {
 };
 </script>
 <style scoped>
-.wheel__spin {
+.button {
   cursor: pointer;
   z-index: 4;
   width: 540px;
