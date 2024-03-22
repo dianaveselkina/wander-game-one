@@ -6,13 +6,17 @@
     <MyButton
       v-if="startVisibility"
       class="button"
-      @click="deleteStartBtn(), addSpin(), addWhee()"
+      @click="deleteStartBtn(), addSpin(), addWhee(), addWheelBig()"
       >Начать игру</MyButton
     >
     <StartDiv></StartDiv>
     <PlayerDiv>1</PlayerDiv>
     <PlayerDiv class="player2">2</PlayerDiv>
-    <WheelDiv v-if="wheelVisibility" class="wheel"></WheelDiv>
+    <div class="wheel__big" v-if="wheelBigVisibility">
+      <transition name="rotate">
+        <WheelDiv v-if="wheelVisibility" class="wheel"></WheelDiv>
+      </transition>
+    </div>
     <FinishDiv></FinishDiv>
     <BoardDiv></BoardDiv>
   </div>
@@ -39,6 +43,7 @@ export default {
       wheelVisibility: false,
       spinVisibility: false,
       isRotate: false,
+      wheelBigVisibility: false,
     };
   },
   methods: {
@@ -50,6 +55,9 @@ export default {
     },
     addWhee() {
       this.wheelVisibility = true;
+    },
+    addWheelBig() {
+      this.wheelBigVisibility = true;
     },
     removeWhee() {
       this.wheelVisibility = false;
@@ -86,14 +94,27 @@ export default {
   left: 130px;
 }
 .wheel {
-  margin: 550px 850px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* margin: 550px 850px; */
   text-align: center;
+}
+.wheel__big {
+  position: relative;
+  background-image: url(img/wheel1.png);
+  z-index: 8;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 700px;
+  height: 700px;
 }
 .rotate-enter-active,
 .rotate-leave-active {
   transition: all 2s ease-in-out;
 }
-.rotate-enter, .rotate-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  transform: scale(200%);
+.rotate-enter,
+.rotate-leave-to {
+  transform: rotate(180deg);
 }
 </style>

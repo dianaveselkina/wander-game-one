@@ -1,7 +1,5 @@
 <template>
-  <div class="wheel__small">
-    <div class="wheel__big"></div>
-  </div>
+  <div class="wheel__small"></div>
 </template>
 <script>
 export default {
@@ -12,15 +10,6 @@ export default {
 };
 </script>
 <style scoped>
-.wheel__big {
-  position: relative;
-  background-image: url(../img/wheel1.png);
-  z-index: 8;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 700px;
-  height: 700px;
-}
 .wheel__small {
   position: absolute;
   top: 0;

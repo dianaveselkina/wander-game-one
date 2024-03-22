@@ -7,7 +7,7 @@
     <div class="circle">4</div>
     <div class="circle5">5</div>
     <div class="circle">6</div>
-    <div class="circle7">7</div>
+    <div id="7" class="circle7">7</div>
     <div class="background"></div>
     <div class="background"></div>
     <div class="background"></div>
