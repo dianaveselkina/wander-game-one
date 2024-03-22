@@ -1,6 +1,9 @@
 <template>
   <div class="board">
-    <MyButton v-if="spinVisibility" class="button" @click="removeWhee()"
+    <MyButton
+      v-if="spinVisibility"
+      class="button"
+      @click="removeWheel(), removeWheelBig()"
       >Крутить барабан</MyButton
     >
     <MyButton
@@ -12,7 +15,7 @@
     <StartDiv></StartDiv>
     <PlayerDiv>1</PlayerDiv>
     <PlayerDiv class="player2">2</PlayerDiv>
-    <div class="wheel__big" v-if="wheelBigVisibility">
+    <div class="wheel__big" v-show="wheelBigVisibility">
       <transition name="rotate">
         <WheelDiv v-if="wheelVisibility" class="wheel"></WheelDiv>
       </transition>
@@ -59,8 +62,14 @@ export default {
     addWheelBig() {
       this.wheelBigVisibility = true;
     },
-    removeWhee() {
+    removeWheel() {
       this.wheelVisibility = false;
+    },
+
+    removeWheelBig() {
+      this.wheel = setTimeout(() => {
+        this.wheelBigVisibility = false;
+      }, 2000);
     },
     wheelSpin() {},
   },
@@ -95,19 +104,19 @@ export default {
 }
 .wheel {
   position: absolute;
-  top: 0;
-  right: 0;
-  /* margin: 550px 850px; */
+  top: 1.5em;
+  left: 1.5em;
+  margin: 0;
   text-align: center;
 }
 .wheel__big {
   position: relative;
   background-image: url(img/wheel1.png);
-  z-index: 8;
+  z-index: 10;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 700px;
-  height: 700px;
+  width: 750px;
+  height: 750px;
 }
 .rotate-enter-active,
 .rotate-leave-active {
